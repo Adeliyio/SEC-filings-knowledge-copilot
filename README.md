@@ -4,8 +4,6 @@
 
 **An AI copilot that reads SEC 10-K filings from Apple, Meta, and Microsoft, answering financial queries with multi-agent retrieval, self-correction, and claim-level verification. A comprehensive evaluation pipeline ensures answer quality is measured, not assumed. Runs fully local on Ollama with zero API costs.**
 
-> Author: **Tommy** &middot; [GitHub](https://github.com/) &middot; [LinkedIn](https://linkedin.com/)
-
 ---
 
 ## The Problem
@@ -32,7 +30,6 @@ Financial analysts, investors, and compliance teams spend hours cross-referencin
 
 ---
 
-## Screenshots
 
 ### Chat Landing Page
 
@@ -377,7 +374,7 @@ companywidekb/
 
 ```bash
 # 1. Clone the repository
-git clone <repo-url>
+git clone https://github.com/Adeliyio/SEC-filings-knowledge-copilot.git
 cd companywidekb
 
 # 2. Copy environment config
@@ -509,7 +506,7 @@ Collection: sec_filings
 
 ---
 
-## What I'd Change for Production Scale
+## What I would Change for Production Scale
 
 | Current (Portfolio) | Production Alternative | Why |
 |---|---|---|
