@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/
+claude.md
+CLAUDE.md
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environment variables
+.env
+
+# Node
+node_modules/
+.vite/
+.vite-temp/
+
+# Docker
+*.log
+
+# Evaluation reports (generated)
+evaluation/reports/*.json
+evaluation/reports/*.html
+
+# Root-level lockfile (not a real project)
+package-lock.json

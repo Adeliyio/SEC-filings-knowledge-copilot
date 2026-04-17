@@ -1,0 +1,601 @@
+{
+  "version": "1.0.0",
+  "description": "Golden evaluation dataset for Enterprise Knowledge Copilot. 50 curated query triplets against Apple, Meta, and Microsoft 10-K filings (FY 2024).",
+  "entries": [
+    {
+      "id": "golden_001",
+      "query": "What was Apple's total net revenue in FY 2024?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "easy",
+      "expected_answer": "Apple's total net revenue in FY 2024 was approximately $391.0 billion.",
+      "key_facts": ["$391.0 billion", "total net revenue", "FY 2024"],
+      "expected_sources": [{"company": "Apple", "section": "Item 6", "type": "financial_table"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_002",
+      "query": "What was Meta's total revenue in FY 2024?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "easy",
+      "expected_answer": "Meta Platforms reported total revenue of approximately $164.5 billion in FY 2024.",
+      "key_facts": ["$164.5 billion", "total revenue", "FY 2024"],
+      "expected_sources": [{"company": "Meta", "section": "Item 6"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_003",
+      "query": "What was Microsoft's total revenue in fiscal year 2024?",
+      "category": "single_company",
+      "company": "Microsoft",
+      "difficulty": "easy",
+      "expected_answer": "Microsoft reported total revenue of approximately $245.1 billion for fiscal year 2024.",
+      "key_facts": ["$245.1 billion", "total revenue", "fiscal year 2024"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 6"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_004",
+      "query": "What was Apple's R&D spending in FY 2024 and how did it compare to the prior year?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "medium",
+      "expected_answer": "Apple's research and development expenses in FY 2024 were approximately $31.4 billion, an increase from $29.9 billion in FY 2023.",
+      "key_facts": ["R&D expenses", "$31.4 billion", "increase", "FY 2023 comparison"],
+      "expected_sources": [{"company": "Apple", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_005",
+      "query": "How much did Meta spend on research and development in FY 2024?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "easy",
+      "expected_answer": "Meta's research and development expenses in FY 2024 were approximately $44.4 billion.",
+      "key_facts": ["research and development", "$44.4 billion", "FY 2024"],
+      "expected_sources": [{"company": "Meta", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_006",
+      "query": "What were Microsoft's operating income and operating margin in FY 2024?",
+      "category": "single_company",
+      "company": "Microsoft",
+      "difficulty": "medium",
+      "expected_answer": "Microsoft's operating income in FY 2024 was approximately $109.4 billion, representing an operating margin of approximately 44.6%.",
+      "key_facts": ["operating income", "$109.4 billion", "operating margin", "44.6%"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_007",
+      "query": "Compare the total revenue of Apple, Meta, and Microsoft in FY 2024.",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "medium",
+      "expected_answer": "In FY 2024: Apple reported ~$391.0B in total revenue, Microsoft reported ~$245.1B, and Meta reported ~$164.5B. Apple had the highest total revenue of the three companies.",
+      "key_facts": ["Apple ~$391B", "Microsoft ~$245B", "Meta ~$165B", "comparison"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 6"},
+        {"company": "Meta", "section": "Item 6"},
+        {"company": "Microsoft", "section": "Item 6"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_008",
+      "query": "Which company had the highest operating margin: Apple, Meta, or Microsoft?",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "medium",
+      "expected_answer": "Microsoft had the highest operating margin at approximately 44.6%, followed by Apple and Meta.",
+      "key_facts": ["operating margin", "Microsoft highest", "comparison across three"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 7"},
+        {"company": "Meta", "section": "Item 7"},
+        {"company": "Microsoft", "section": "Item 7"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_009",
+      "query": "Compare R&D spending as a percentage of revenue across Apple, Meta, and Microsoft.",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "Meta spent the highest proportion of revenue on R&D (~27%), followed by Microsoft (~13%), and Apple (~8%). Meta's R&D intensity significantly exceeds the other two companies.",
+      "key_facts": ["R&D as % of revenue", "Meta highest ~27%", "Microsoft ~13%", "Apple ~8%"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 7"},
+        {"company": "Meta", "section": "Item 7"},
+        {"company": "Microsoft", "section": "Item 7"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_010",
+      "query": "What are the primary risk factors Apple discloses in its 10-K filing?",
+      "category": "risk_factor",
+      "company": "Apple",
+      "difficulty": "medium",
+      "expected_answer": "Apple's key risk factors include: macroeconomic conditions and their effect on consumer spending, intense competition, supply chain disruptions, dependence on third-party developers and suppliers, regulatory risks, intellectual property disputes, and cybersecurity threats.",
+      "key_facts": ["macroeconomic conditions", "competition", "supply chain", "regulatory"],
+      "expected_sources": [{"company": "Apple", "section": "Item 1A"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_011",
+      "query": "What regulatory risks does Meta disclose in its 10-K?",
+      "category": "risk_factor",
+      "company": "Meta",
+      "difficulty": "medium",
+      "expected_answer": "Meta discloses regulatory risks including: data privacy and protection regulations (GDPR, CCPA), content moderation obligations, antitrust scrutiny, potential restrictions on targeted advertising, and evolving AI regulation.",
+      "key_facts": ["data privacy", "GDPR", "content moderation", "antitrust", "advertising"],
+      "expected_sources": [{"company": "Meta", "section": "Item 1A"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_012",
+      "query": "What cybersecurity risks does Microsoft mention in its 10-K?",
+      "category": "risk_factor",
+      "company": "Microsoft",
+      "difficulty": "medium",
+      "expected_answer": "Microsoft identifies cybersecurity risks including: sophisticated cyberattacks, data breaches affecting customer trust, nation-state attacks, vulnerabilities in its cloud services, and the evolving threat landscape.",
+      "key_facts": ["cyberattacks", "data breaches", "cloud services", "nation-state"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 1A"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_013",
+      "query": "What are Apple's main product segments and their revenue contributions?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "medium",
+      "expected_answer": "Apple's main segments include: iPhone (largest revenue contributor), Services (second largest and growing), Mac, iPad, and Wearables/Home/Accessories.",
+      "key_facts": ["iPhone", "Services", "Mac", "iPad", "Wearables"],
+      "expected_sources": [{"company": "Apple", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_014",
+      "query": "How does Meta generate its revenue? What are the main revenue streams?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "medium",
+      "expected_answer": "Meta generates the vast majority of its revenue from advertising across its Family of Apps (Facebook, Instagram, WhatsApp, Messenger). Its Reality Labs segment generates a small portion of revenue from sales of VR/AR hardware and software.",
+      "key_facts": ["advertising", "Family of Apps", "Reality Labs", "VR/AR hardware"],
+      "expected_sources": [{"company": "Meta", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_015",
+      "query": "What are Microsoft's three main business segments?",
+      "category": "single_company",
+      "company": "Microsoft",
+      "difficulty": "easy",
+      "expected_answer": "Microsoft's three reportable segments are: (1) Productivity and Business Processes (Office, LinkedIn, Dynamics), (2) Intelligent Cloud (Azure, server products), and (3) More Personal Computing (Windows, Xbox, Surface, Search).",
+      "key_facts": ["Productivity and Business Processes", "Intelligent Cloud", "More Personal Computing"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_016",
+      "query": "What was the revenue growth rate for each of Apple, Meta, and Microsoft in FY 2024?",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "In FY 2024, Meta had the highest revenue growth rate, followed by Microsoft, while Apple had more modest growth.",
+      "key_facts": ["revenue growth rate", "year-over-year comparison", "all three companies"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 7"},
+        {"company": "Meta", "section": "Item 7"},
+        {"company": "Microsoft", "section": "Item 7"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_017",
+      "query": "What are Microsoft's remaining performance obligations?",
+      "category": "footnote",
+      "company": "Microsoft",
+      "difficulty": "hard",
+      "expected_answer": "Microsoft's remaining performance obligations represent revenue to be recognized in the future from existing contracts. This is primarily related to its cloud services and enterprise agreements.",
+      "key_facts": ["remaining performance obligations", "future revenue", "cloud contracts"],
+      "expected_sources": [{"company": "Microsoft", "section": "Notes to Financial Statements"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_018",
+      "query": "How much cash and cash equivalents does Apple hold?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "easy",
+      "expected_answer": "Apple held approximately $29.9 billion in cash and cash equivalents at the end of FY 2024.",
+      "key_facts": ["cash and cash equivalents", "balance sheet"],
+      "expected_sources": [{"company": "Apple", "section": "Balance Sheet"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_019",
+      "query": "What was Meta's net income in FY 2024?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "easy",
+      "expected_answer": "Meta's net income in FY 2024 was approximately $62.4 billion.",
+      "key_facts": ["net income", "$62.4 billion"],
+      "expected_sources": [{"company": "Meta", "section": "Item 6"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_020",
+      "query": "What was Microsoft's capital expenditure in FY 2024 and what was it primarily used for?",
+      "category": "single_company",
+      "company": "Microsoft",
+      "difficulty": "medium",
+      "expected_answer": "Microsoft's capital expenditures in FY 2024 were significant, primarily driven by investments in cloud infrastructure and data centers to support Azure and AI services.",
+      "key_facts": ["capital expenditure", "cloud infrastructure", "data centers", "Azure", "AI"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_021",
+      "query": "How does Meta's capex growth rate compare to its revenue growth rate?",
+      "category": "multi_step",
+      "company": "Meta",
+      "difficulty": "hard",
+      "expected_answer": "Meta's capital expenditure growth has outpaced its revenue growth, reflecting the company's heavy investment in AI infrastructure and Reality Labs.",
+      "key_facts": ["capex growth", "revenue growth", "comparison", "AI infrastructure"],
+      "expected_sources": [{"company": "Meta", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_022",
+      "query": "What does Apple say about its environmental and sustainability initiatives?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "medium",
+      "expected_answer": "Apple discusses its commitment to environmental sustainability, including goals related to carbon neutrality, use of recycled materials in products, and renewable energy usage across its supply chain.",
+      "key_facts": ["carbon neutrality", "recycled materials", "renewable energy", "supply chain"],
+      "expected_sources": [{"company": "Apple", "section": "Item 1"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_023",
+      "query": "What is Meta's headcount and how has it changed?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "medium",
+      "expected_answer": "Meta's headcount as reported in its FY 2024 10-K reflects changes from its efficiency initiatives, including workforce reductions in prior years.",
+      "key_facts": ["headcount", "employee count", "efficiency", "workforce changes"],
+      "expected_sources": [{"company": "Meta", "section": "Item 1"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_024",
+      "query": "What legal proceedings are disclosed in Microsoft's 10-K?",
+      "category": "footnote",
+      "company": "Microsoft",
+      "difficulty": "hard",
+      "expected_answer": "Microsoft discloses various legal proceedings including antitrust matters, patent infringement claims, tax disputes, and government regulatory investigations.",
+      "key_facts": ["legal proceedings", "antitrust", "patent", "regulatory"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 3"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_025",
+      "query": "Compare the total headcount across Apple, Meta, and Microsoft.",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "medium",
+      "expected_answer": "As of their FY 2024 filings, the three companies report different employee counts reflecting their different business models and recent workforce changes.",
+      "key_facts": ["headcount", "employee count", "all three companies"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 1"},
+        {"company": "Meta", "section": "Item 1"},
+        {"company": "Microsoft", "section": "Item 1"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_026",
+      "query": "What is Apple's effective tax rate and how does it compare to the statutory rate?",
+      "category": "footnote",
+      "company": "Apple",
+      "difficulty": "hard",
+      "expected_answer": "Apple's effective tax rate differs from the U.S. statutory rate of 21% primarily due to the tax impact of earnings in jurisdictions with different tax rates and the impact of tax provisions.",
+      "key_facts": ["effective tax rate", "statutory rate", "21%", "foreign jurisdictions"],
+      "expected_sources": [{"company": "Apple", "section": "Notes to Financial Statements"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_027",
+      "query": "What is Meta's strategy for AI and how does the 10-K discuss it?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "medium",
+      "expected_answer": "Meta discusses AI as a core strategic priority, investing heavily in AI infrastructure, large language models, and AI-powered features across its apps. The 10-K references significant capex for AI data centers.",
+      "key_facts": ["AI strategy", "infrastructure investment", "large language models", "data centers"],
+      "expected_sources": [{"company": "Meta", "section": "Item 1"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_028",
+      "query": "What is Microsoft's cloud revenue and how fast is it growing?",
+      "category": "single_company",
+      "company": "Microsoft",
+      "difficulty": "medium",
+      "expected_answer": "Microsoft's Intelligent Cloud segment, which includes Azure, showed strong revenue growth in FY 2024, driven by demand for cloud services and AI workloads.",
+      "key_facts": ["Intelligent Cloud", "Azure", "revenue growth", "AI workloads"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_029",
+      "query": "What does Apple disclose about its share repurchase program?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "medium",
+      "expected_answer": "Apple has an active share repurchase program through which it has returned significant capital to shareholders. The company regularly authorizes additional repurchase amounts.",
+      "key_facts": ["share repurchase", "buyback", "capital return"],
+      "expected_sources": [{"company": "Apple", "section": "Item 5"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_030",
+      "query": "How much did Meta spend on Reality Labs in FY 2024 and what were the losses?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "medium",
+      "expected_answer": "Meta's Reality Labs segment reported significant operating losses in FY 2024, reflecting heavy investment in VR/AR hardware and the metaverse.",
+      "key_facts": ["Reality Labs", "operating losses", "VR/AR", "metaverse investment"],
+      "expected_sources": [{"company": "Meta", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_031",
+      "query": "What are the key differences in revenue concentration risk between Apple and Meta?",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "Apple's revenue is concentrated in iPhone sales (hardware), while Meta's revenue is concentrated in advertising. Both face concentration risk but from different sources — Apple from product dependence and Meta from ad market dependence.",
+      "key_facts": ["revenue concentration", "iPhone", "advertising", "different risk profiles"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 1A"},
+        {"company": "Meta", "section": "Item 1A"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_032",
+      "query": "What was Apple's gross profit margin in FY 2024?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "easy",
+      "expected_answer": "Apple's gross profit margin in FY 2024 was approximately 46.2%.",
+      "key_facts": ["gross profit margin", "~46%"],
+      "expected_sources": [{"company": "Apple", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_033",
+      "query": "What geographic segments does Apple report revenue for?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "medium",
+      "expected_answer": "Apple reports revenue across geographic segments including the Americas, Europe, Greater China, Japan, and Rest of Asia Pacific.",
+      "key_facts": ["Americas", "Europe", "Greater China", "Japan", "Rest of Asia Pacific"],
+      "expected_sources": [{"company": "Apple", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_034",
+      "query": "What is Microsoft's dividend policy?",
+      "category": "single_company",
+      "company": "Microsoft",
+      "difficulty": "easy",
+      "expected_answer": "Microsoft pays a quarterly dividend to shareholders and has a history of increasing its dividend. Details of the dividend per share are disclosed in the 10-K.",
+      "key_facts": ["quarterly dividend", "dividend increase history"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 5"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_035",
+      "query": "What does Meta say about competition in its 10-K?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "medium",
+      "expected_answer": "Meta identifies competition from companies offering social networking, messaging, content sharing, and advertising services. Key competitors include Google/YouTube, TikTok, Apple, Amazon, and Snapchat.",
+      "key_facts": ["competition", "Google", "TikTok", "social networking", "advertising"],
+      "expected_sources": [{"company": "Meta", "section": "Item 1"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_036",
+      "query": "How much long-term debt does each company (Apple, Meta, Microsoft) carry?",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "All three companies carry significant long-term debt, with Apple historically maintaining the largest debt position among the three. The exact amounts are disclosed in their respective balance sheets.",
+      "key_facts": ["long-term debt", "balance sheet", "all three companies"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Balance Sheet"},
+        {"company": "Meta", "section": "Balance Sheet"},
+        {"company": "Microsoft", "section": "Balance Sheet"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_037",
+      "query": "What does Apple's 10-K say about its supply chain risks?",
+      "category": "risk_factor",
+      "company": "Apple",
+      "difficulty": "medium",
+      "expected_answer": "Apple discloses supply chain risks including dependence on sole-source or limited-source suppliers, concentration of manufacturing in certain regions, component shortage risks, and geopolitical factors affecting supply chains.",
+      "key_facts": ["sole-source suppliers", "manufacturing concentration", "component shortages", "geopolitical"],
+      "expected_sources": [{"company": "Apple", "section": "Item 1A"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_038",
+      "query": "What is the Activision Blizzard acquisition mentioned in Microsoft's 10-K?",
+      "category": "single_company",
+      "company": "Microsoft",
+      "difficulty": "medium",
+      "expected_answer": "Microsoft's 10-K discusses the acquisition of Activision Blizzard, which was completed in October 2023. This acquisition significantly expanded Microsoft's gaming portfolio.",
+      "key_facts": ["Activision Blizzard", "acquisition", "gaming", "October 2023"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_039",
+      "query": "What are the key differences in how Apple and Microsoft generate services revenue?",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "Apple's services revenue comes from the App Store, iCloud, Apple Music, Apple TV+, and AppleCare. Microsoft's services revenue comes from cloud services (Azure), Office 365 subscriptions, LinkedIn, and Dynamics 365. Microsoft's services are enterprise-focused while Apple's are consumer-focused.",
+      "key_facts": ["App Store", "Azure", "Office 365", "consumer vs enterprise"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 7"},
+        {"company": "Microsoft", "section": "Item 7"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_040",
+      "query": "What does Meta disclose about user metrics and engagement?",
+      "category": "single_company",
+      "company": "Meta",
+      "difficulty": "medium",
+      "expected_answer": "Meta reports user metrics including Daily Active People (DAP) and Monthly Active People (MAP) across its Family of Apps. The 10-K discusses engagement trends and metrics methodology.",
+      "key_facts": ["Daily Active People", "Monthly Active People", "Family of Apps", "engagement"],
+      "expected_sources": [{"company": "Meta", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_041",
+      "query": "What was Apple's Services segment revenue and its growth rate in FY 2024?",
+      "category": "single_company",
+      "company": "Apple",
+      "difficulty": "medium",
+      "expected_answer": "Apple's Services segment generated approximately $96.2 billion in revenue in FY 2024, representing a record high and continued growth from the prior year.",
+      "key_facts": ["Services revenue", "$96.2 billion", "growth", "record"],
+      "expected_sources": [{"company": "Apple", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_042",
+      "query": "What inventory management approach does Apple describe?",
+      "category": "footnote",
+      "company": "Apple",
+      "difficulty": "hard",
+      "expected_answer": "Apple maintains relatively low inventory levels through its just-in-time supply chain approach and direct sales model, with inventory primarily consisting of finished goods and components.",
+      "key_facts": ["inventory", "supply chain", "just-in-time", "finished goods"],
+      "expected_sources": [{"company": "Apple", "section": "Notes to Financial Statements"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_043",
+      "query": "Compare the capital allocation strategies of Apple, Meta, and Microsoft.",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "Apple focuses on share buybacks and dividends as its primary capital return mechanism. Meta has been investing heavily in AI and Reality Labs capex while also conducting buybacks. Microsoft balances acquisitions (Activision), dividends, buybacks, and cloud infrastructure investment.",
+      "key_facts": ["buybacks", "dividends", "capex", "acquisitions", "different strategies"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 7"},
+        {"company": "Meta", "section": "Item 7"},
+        {"company": "Microsoft", "section": "Item 7"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_044",
+      "query": "What does Microsoft say about AI in its 10-K?",
+      "category": "single_company",
+      "company": "Microsoft",
+      "difficulty": "medium",
+      "expected_answer": "Microsoft's 10-K extensively discusses AI as a transformational technology, covering its partnership with OpenAI, Copilot integration across products, Azure AI services, and the impact of AI on all three business segments.",
+      "key_facts": ["AI", "OpenAI", "Copilot", "Azure AI", "transformational"],
+      "expected_sources": [{"company": "Microsoft", "section": "Item 1"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_045",
+      "query": "What foreign exchange risks do Apple and Microsoft disclose?",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "Both Apple and Microsoft face significant foreign exchange risk due to their global operations. Apple hedges certain foreign currency exposures. Microsoft similarly uses derivative instruments to manage currency risk.",
+      "key_facts": ["foreign exchange risk", "hedging", "derivative instruments", "global operations"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 7A"},
+        {"company": "Microsoft", "section": "Item 7A"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_046",
+      "query": "What goodwill and intangible assets does Microsoft report?",
+      "category": "footnote",
+      "company": "Microsoft",
+      "difficulty": "hard",
+      "expected_answer": "Microsoft reports significant goodwill on its balance sheet, substantially increased by the Activision Blizzard acquisition. Intangible assets include technology, customer relationships, and trademarks from various acquisitions.",
+      "key_facts": ["goodwill", "intangible assets", "Activision Blizzard", "acquisitions"],
+      "expected_sources": [{"company": "Microsoft", "section": "Notes to Financial Statements"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_047",
+      "query": "What is the total cash returned to shareholders by Apple through buybacks and dividends?",
+      "category": "multi_step",
+      "company": "Apple",
+      "difficulty": "hard",
+      "expected_answer": "Apple returned a significant amount to shareholders through its share repurchase program and dividend payments in FY 2024, totaling over $100 billion combined.",
+      "key_facts": ["share repurchases", "dividends", "total shareholder return", "over $100B"],
+      "expected_sources": [{"company": "Apple", "section": "Item 5"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_048",
+      "query": "What are the main drivers of Meta's advertising revenue growth?",
+      "category": "multi_step",
+      "company": "Meta",
+      "difficulty": "medium",
+      "expected_answer": "Meta's advertising revenue growth is driven by increases in ad impressions, higher average price per ad, improvements in ad targeting through AI/ML, growth in Reels monetization, and expansion of advertiser base.",
+      "key_facts": ["ad impressions", "price per ad", "AI targeting", "Reels", "advertiser base"],
+      "expected_sources": [{"company": "Meta", "section": "Item 7"}],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_049",
+      "query": "How do the three companies' approaches to AI investment differ based on their 10-K filings?",
+      "category": "cross_company",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "Apple integrates AI into its devices and services with an on-device focus. Meta invests heavily in AI for ad targeting, content recommendation, and generative AI models. Microsoft focuses on cloud-based AI services through Azure, its OpenAI partnership, and Copilot integration across enterprise products.",
+      "key_facts": ["on-device AI", "cloud AI", "OpenAI partnership", "ad targeting", "different approaches"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Item 1"},
+        {"company": "Meta", "section": "Item 1"},
+        {"company": "Microsoft", "section": "Item 1"}
+      ],
+      "expected_chunk_ids": []
+    },
+    {
+      "id": "golden_050",
+      "query": "What accounting policies do the three companies use for revenue recognition?",
+      "category": "footnote",
+      "company": null,
+      "difficulty": "hard",
+      "expected_answer": "All three companies follow ASC 606 for revenue recognition. Apple recognizes product revenue at the point of sale and service revenue over time. Meta recognizes advertising revenue when ads are displayed. Microsoft recognizes software license revenue upfront and cloud subscription revenue ratably over the contract term.",
+      "key_facts": ["ASC 606", "revenue recognition", "point of sale", "over time", "ratable"],
+      "expected_sources": [
+        {"company": "Apple", "section": "Notes to Financial Statements"},
+        {"company": "Meta", "section": "Notes to Financial Statements"},
+        {"company": "Microsoft", "section": "Notes to Financial Statements"}
+      ],
+      "expected_chunk_ids": []
+    }
+  ]
+}
